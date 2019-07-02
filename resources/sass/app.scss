@@ -1,6 +1,5 @@
-
-// Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+// Tailwind
+@import 'tailwind.min';
 
 // Variables
 @import 'variables';
@@ -8,7 +7,300 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+
+@font-face{
+  font-family: 'Source Sans Pro';
+  font-weight: 400;
+  font-style: normal;
+  font-stretch: normal;
+  src: url('/public/fonts/source-sans-pro/EOT/SourceSansPro-Regular.eot') format('embedded-opentype'),
+  url('/public/fonts/source-sans-pro/WOFF2/TTF/SourceSansPro-Regular.ttf.woff2') format('woff2'),
+  url('/public/fonts/source-sans-pro/WOFF/OTF/SourceSansPro-Regular.otf.woff') format('woff'),
+  url('/public/fonts/source-sans-pro/OTF/SourceSansPro-Regular.otf') format('opentype'),
+  url('/public/fonts/source-sans-pro/TTF/SourceSansPro-Regular.ttf') format('truetype');
+}
+
+@font-face{
+  font-family: 'Source Sans Pro';
+  font-weight: 400;
+  font-style: italic;
+  font-stretch: normal;
+  src: url('/public/fonts/source-sans-pro/EOT/SourceSansPro-It.eot') format('embedded-opentype'),
+  url('/public/fonts/source-sans-pro/WOFF2/TTF/SourceSansPro-It.ttf.woff2') format('woff2'),
+  url('/public/fonts/source-sans-pro/WOFF/OTF/SourceSansPro-It.otf.woff') format('woff'),
+  url('/public/fonts/source-sans-pro/OTF/SourceSansPro-It.otf') format('opentype'),
+  url('/public/fonts/source-sans-pro/TTF/SourceSansPro-It.ttf') format('truetype');
+}
+
+$font-stack: 'SourceSansPro', sans-serif;
+
 .navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+html, body {
+  background-color: $lightgreybg;
+  font-family: $font-stack, sans-serif;
+  font-weight: 200;
+  height: 100vh;
+  margin: 0;
+}
+
+.full-height {
+  height: 100vh;
+}
+
+.flex-center {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.position-ref {
+  position: relative;
+}
+
+.top-right {
+  position: absolute;
+  right: 10px;
+  top: 18px;
+}
+
+.content {
+  text-align: center;
+}
+
+.title {
+  font-size: 36px;
+}
+
+.links > a {
+  color: #636b6f;
+  padding: 0 25px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.m-b-md {
+  margin-bottom: 30px;
+}
+
+
+.App {
+  width:90%;
+  margin:auto;
+}
+
+.App-header {
+  height: 150px;
+  padding: 20px;
+  color: #395693;
+}
+
+.userBox {
+  display: flex;
+  flex-direction: column;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.listItem {
+  flex: 1;
+  flex-basis: 30%;
+}
+
+.form-row {
+  display: flex;
+}
+
+.form-row .inputBox {
+  border-radius: 10px;
+  flex: 1;
+}
+
+#userdiv {
+  clear: both;
+  flex: 1;
+}
+
+#userform {
+  clear: both;
+  flex: 1;
+}
+
+.card {
+  border: none !important;
+  border-radius: 15px;
+}
+
+.card-header>h4 {
+  margin-bottom: 0 !important;
+}
+
+.card-body form .form-row label {
+  flex: 1;
+}
+
+.reactside {
+  .card-header {
+    color: #fff !important;
+    background-color: $reactblue !important;
+  }
+
+  .card-body {
+    border: 3px solid $reactblue;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    -webkit-transition-duration: 0.3s; /* Safari */
+    transition-duration: 0.3s;
+  }
+
+.form-row .inputBox {
+    border: 3px solid $reactblue;
+  }
+}
+
+.vueside {
+  .card-header {
+    color: #000 !important;
+    background-color: $vuegreen !important;
+  }
+
+  .card-body {
+    border: 3px solid $vuegreen;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    -webkit-transition-duration: 0.3s; /* Safari */
+    transition-duration: 0.3s;
+  }
+
+.form-row .inputBox {
+    border: 3px solid $vuegreen;
+  }
+}
+
+button, button:hover, button:active, button:focus {
+  outline: none !important;
+  -webkit-transition-duration: 0.3s; /* Safari */
+  transition-duration: 0.3s;
+}
+
+a, a:link, a:visited, a:hover, a:active {
+  text-decoration: none;
+  -webkit-transition-duration: 0.3s; /* Safari */
+  transition-duration: 0.3s;
+}
+h4, h5 {
+  //margin-bottom: 0 !important;
+}
+p {
+  margin: 0 !important;
+}
+
+.light-grey-bg {
+  background-color: $lightgreybg !important;
+}
+
+.plusSymbol {
+  font-size: 50px;
+  line-height: 20px;
+  font-weight: bolder;
+  color: #fff !important;
+  float: right;
+  cursor: pointer;
+  padding-bottom: 5px;
+  margin-bottom: -5px;
+}
+
+.plusSymbol:hover {
+  text-shadow: -1px 1px 1px #000 !important;
+}
+
+.card-header>h5 {
+  float: left;
+  clear: none;
+}
+
+
+
+
+.nav-link { 
+  border-radius: 10px;
+  margin-left: 10px;
+  padding-top: 3px !important;
+  padding-bottom: 3px !important;
+  background-color:transparent; color:rgba(255, 255, 255, 0.5);
+  -webkit-transition-duration: 0.3s; /* Safari */
+  transition-duration: 0.3s;
+}
+
+.nav-link:hover {
+  background-color:white; 
+  color: black !important;
+}
+
+.getUserDetails {
+  color: #000;
+  background-color: #fff;
+  border: 3px solid $reactblue;
+}
+
+.getUserDetails, .vgetUserDetails {
+  float: right;
+  border-radius: 15px;
+}
+
+.getUserDetails:hover, .vgetUserDetails:hover {
+  box-shadow:0 4px 8px 0 rgba(0,0,0,.12),0 2px 4px 0 rgba(0,0,0,.08); cursor: pointer;
+}
+
+.getUserDetails:hover {
+  background-color: $reactblue;
+  color: white !important;
+  border: 3px solid #fff;
+}
+
+.vgetUserDetails:hover {
+  background-color: $vuegreen;
+  color: white;
+}
+
+.vgrad {
+  background: -moz-linear-gradient(top,  rgba(65,184,131,1) 0%, rgba(65,184,131,0) 100%);
+  background: -webkit-linear-gradient(top,  rgba(65,184,131,1) 0%,rgba(65,184,131,0) 100%);
+  background: linear-gradient(to bottom,  rgba(65,184,131,1) 0%,rgba(65,184,131,0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#41b883', endColorstr='#0041b883',GradientType=0 );
+}
+
+.rgrad {
+  background: -moz-linear-gradient(top,  rgba(57,86,147,1) 0%, rgba(65,184,131,0) 100%);
+  background: -webkit-linear-gradient(top,  rgba(57,86,147,1) 0%,rgba(65,184,131,0) 100%);
+  background: linear-gradient(to bottom,  rgba(57,86,147,1) 0%,rgba(65,184,131,0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#395693', endColorstr='#0041b883',GradientType=0 );
+}
+
+
+
+.grow-enter-active, .grow-leave-active {
+  transition: height .5s
+}
+.grow-enter, .grow-leave-active {
+  height: initial;
+}
+
+.shrink-enter-active, .shrink-leave-active {
+  transition: height .5s
+}
+.shrink-enter, .shrink-leave-active {
+  height: 0
 }

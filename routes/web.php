@@ -11,14 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', function () { return view('home'); });
 
-Auth::routes();
+Route::get('home', 'PageController@index')->name('home');
+Route::get('profile', 'PageController@profile')->name('profile');
+Route::get('users', 'UserController@index')->name('get-users');
+Route::get('/users/{id}', 'UserController@show');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::post('users', 'UserController@store');
+
+
+

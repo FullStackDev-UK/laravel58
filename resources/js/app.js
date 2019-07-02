@@ -1,33 +1,60 @@
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js', {scope: ''})
+    .then(function(reg) {
+      // registration worked
+      console.log('Registration succeeded. Scope is ' + reg.scope);
+    }).catch(function(error) {
+      // registration failed
+      console.log('Registration failed with ' + error);
+    });
+  } 
 
 /**
  * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
+ * includes React and other helpers. It's a great starting point while
+ * building robust, powerful web applications using React + Laravel.
  */
+import * as Vue from "vue";
+global.Vue = global.Vue = require('vue');
+
+import axios from "axios";
+global.axios = global.axios = require('axios');
+window.axios = require('axios');
 
 require('./bootstrap');
-
-window.Vue = require('vue');
-
 /**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
-
-// const files = require.context('./', true, /\.vue$/i);
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
-
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-
-/**
- * Next, we will create a fresh Vue application instance and attach it to
+ * Next, we will create a fresh React component instance and attach it to
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-const app = new Vue({
-    el: '#app'
-});
+require('./components/Users');
+require('./components/UserForm');
+console.log("React components loaded........");
+
+require('./components/VueUsers');
+require('./components/VueUserForm');
+console.log("Vue components loaded........");
+
+Vue.component('vue-list-users', require('./components/VueUsers').default);
+Vue.component('vue-add-user-form', require('./components/VueUserForm').default);
+
+var obj = {
+    foo: 'bar'
+}
+
+// Main Vue container
+new Vue({
+    el: '#app',
+    data () {
+        return {
+            obj: obj,
+            info: null
+        }
+    }
+    //, mounted () {
+    //     axios
+    //         .get('http://')
+    //         .then(response => (this.info = response))
+    // }
+})
