@@ -14,6 +14,8 @@ npm-debug.log
 /public/storage
 /public/hot
 /storage/*.key
+/storage
+/storage/*
 
 Homestead.yaml
 Homestead.json
