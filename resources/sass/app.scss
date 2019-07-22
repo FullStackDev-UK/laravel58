@@ -200,9 +200,6 @@ a, a:link, a:visited, a:hover, a:active {
   -webkit-transition-duration: 0.3s; /* Safari */
   transition-duration: 0.3s;
 }
-h4, h5 {
-  //margin-bottom: 0 !important;
-}
 p {
   margin: 0 !important;
 }
@@ -247,6 +244,7 @@ p {
 .nav-link:hover {
   background-color:white; 
   color: black !important;
+  text-decoration: none !important;
 }
 
 .getUserDetails {
