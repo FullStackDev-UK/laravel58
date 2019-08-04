@@ -39756,6 +39756,7 @@ p {
 .nav-link:hover {
   background-color: white;
   color: black !important;
+  text-decoration: none !important;
 }
 
 .getUserDetails {
@@ -39815,5 +39816,9 @@ p {
 .shrink-enter,
 .shrink-leave-active {
   height: 0;
+}
+
+.announce {
+  text-align: center;
 }
 

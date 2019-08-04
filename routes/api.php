@@ -13,6 +13,10 @@ use Illuminate\Http\Request;
 |
 */
 
+Route::get('/', function (Request $request) {
+    return response()->json(['message' => 'Success. Base API response received. Any deeper requires authentication by registering which creates an API key. This key will be stored in localStorage and attached to any further axios calls'], 200);
+});
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+    return $request;//->user();
 });
